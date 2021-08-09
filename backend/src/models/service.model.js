@@ -9,7 +9,8 @@ const ServiceSchema = mongoose.Schema({
     },
     since: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     street: {
         type: String,
