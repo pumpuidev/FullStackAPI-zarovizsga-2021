@@ -19,6 +19,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Race'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
     post:
       description: Creates a new race
       requestBody:
@@ -46,8 +52,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-    /races/{_id}:
-      get:
+  /races/{_id}:
+    get:
         description: Get a race
         parameters:
           - in: path
@@ -75,7 +81,7 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Error'
-      patch:
+    patch:
         description: Updates a race
         parameters:
           - in: path
@@ -108,7 +114,7 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Error'
-      delete:
+    delete:
         description: Removes a race
         parameters:
           - in: path
